@@ -4,12 +4,13 @@ import {
   FloatDatePicker,
   FloatFormItem,
   FloatInput,
+  FloatInputMoney,
   FloatInputNumber,
   FloatItemList,
   FloatPassword,
   FloatRangePicker,
-  FloatSelect,
   FloatTimePicker,
+  FloatTreeSelect,
 } from "@/components/antd-float-label"
 import { BasicTable } from "@/components/basic-table"
 import { Button, Col, Form, Row } from "antd"
@@ -63,9 +64,9 @@ function Dashboard() {
               </FloatFormItem>
             </Col>
             <Col span={8}>
-              <Form.Item name={"field2"}>
-                <FloatCascader placeholder="FloatCascader " required />
-              </Form.Item>
+              <FloatFormItem name={"field2"} rules={[{ required: true }]} label="FloatCascader ">
+                <FloatCascader value={"123123"} />
+              </FloatFormItem>
             </Col>
             <Col span={8}>
               <Form.Item name={"field3"} rules={[{ required: true }]}>
@@ -79,7 +80,12 @@ function Dashboard() {
             </Col>
             <Col span={8}>
               <Form.Item name={"field5"} rules={[{ required: true }]}>
-                <FloatInputNumber placeholder="FloatInputNumber " decimalSeparator="," required />
+                <FloatInputNumber placeholder="FloatInputNumber " required />
+              </Form.Item>
+            </Col>
+            <Col span={8}>
+              <Form.Item name={"field50"} rules={[{ required: true }]}>
+                <FloatInputMoney placeholder="FloatInputMoney " required />
               </Form.Item>
             </Col>
             <Col span={8}>
@@ -98,15 +104,27 @@ function Dashboard() {
               </Form.Item>
             </Col>
             <Col span={8}>
+              <Form.Item name={"field10"} rules={[{ required: true }]}>
+                <FloatTreeSelect placeholder="FloatTreeSelect" required />
+              </Form.Item>
+            </Col>
+            <Col span={8}>
               <Form.Item name={"field9"} rules={[{ required: true }]}>
-                <FloatSelect
-                  placeholder="FloatTreeSelect"
-                  required
-                  options={[
-                    { label: "Option 1", value: "1" },
-                    { label: "Option 2", value: "2" },
+                <FloatTreeSelect
+                  placeholder="Chọn nhân viên"
+                  value={""}
+                  onChange={value => {}}
+                  treeData={[
+                    {
+                      title: "Đội A",
+                      value: "team-a",
+                      children: [
+                        { title: "Nhân viên 1", value: "emp1" },
+                        { title: "Nhân viên 2", value: "emp2" },
+                      ],
+                    },
                   ]}
-                  allowClear
+                  required
                 />
               </Form.Item>
             </Col>
@@ -115,12 +133,13 @@ function Dashboard() {
             variant="solid"
             onClick={async e => {
               e.preventDefault()
-              const values = await form.validateFields()
-              const dateD = values.dateD
-              if (dateD) {
-                const d = dayjs(dateD)
-                console.log("Formatted Date D:", d)
-              }
+              // const values = await form.validateFields()
+              // const dateD = values.dateD
+              // if (dateD) {
+              //   const d = dayjs(dateD)
+              //   console.log("Formatted Date D:", d)
+              // }
+              console.log("Form Values:", await form.getFieldsValue())
             }}
           >
             Submit

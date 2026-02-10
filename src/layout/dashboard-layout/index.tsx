@@ -8,13 +8,16 @@ function DashboardLayout({ children }: { children: React.ReactNode }) {
     <Layout className="dashboard-layout">
       <Header className="shadow-md">
         <div className="container mx-auto flex justify-between items-center px-3 md:px-8">
-          <div className="left flex items-center gap-2 font-medium text-[16px]">
-            <div className="logo-symbol">
-              <HomeOutlined />
+          <Link to="/" className="no-underline">
+            <div className="left flex items-center gap-2 font-medium text-[16px] text-black">
+              <div className="logo-symbol">
+                <HomeOutlined />
+              </div>
+              <div className="logo-text hidden md:block">Hệ thống </div>
+              <div className="logo-text block md:hidden">123123</div>
             </div>
-            <div className="logo-text hidden md:block">Hệ thống </div>
-            <div className="logo-text block md:hidden">123123</div>
-          </div>
+          </Link>
+
           <div className="right">
             <Dropdown
               placement="bottomRight"

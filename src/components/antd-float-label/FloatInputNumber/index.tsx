@@ -1,11 +1,11 @@
-import { InputNumber, type InputNumberProps } from "antd";
-import { useCallback } from "react";
-import { FloatingLabelBox, type FloatingLabelBoxProps } from "../FloatingLabelBox";
-import { useValueHandle } from "../../../hooks/use-value-handle";
+import { InputNumber, type InputNumberProps } from "antd"
+import { useCallback } from "react"
+import { useValueHandle } from "../../../hooks/use-value-handle"
+import { FloatingLabelBox, type FloatingLabelBoxProps } from "../FloatingLabelBox"
 
 export interface FloatInputNumberProps extends InputNumberProps {
   required?: boolean
-  labelBoxProps?: FloatingLabelBoxProps;
+  labelBoxProps?: FloatingLabelBoxProps
 }
 
 export function FloatInputNumber({
@@ -21,26 +21,23 @@ export function FloatInputNumber({
   variant,
   ...restProps
 }: FloatInputNumberProps) {
-  const { hasValue, handleChange, handleBlur, handleFocus, isFocus } =
-    useValueHandle({
-      id: restProps.id,
-      defaultValue,
-      value,
-      onFocus,
-      onBlur,
-    });
+  const { hasValue, handleChange, handleBlur, handleFocus, isFocus } = useValueHandle({
+    id: restProps.id,
+    defaultValue,
+    value,
+    onFocus,
+    onBlur,
+  })
 
-  const changeHanlder = useCallback<
-    Exclude<InputNumberProps["onChange"], undefined>
-  >(
-    (value) => {
-      handleChange(value);
+  const changeHanlder = useCallback<Exclude<InputNumberProps["onChange"], undefined>>(
+    value => {
+      handleChange(value)
       if (onChange) {
-        onChange(value);
+        onChange(value)
       }
     },
     [onChange]
-  );
+  )
 
   return (
     <FloatingLabelBox
@@ -50,14 +47,27 @@ export function FloatInputNumber({
       width={style?.width}
       height={style?.height}
       required={required}
-      status={
-        restProps.status || (restProps["aria-invalid"] ? "error" : undefined)
-      }
+      status={restProps.status || (restProps["aria-invalid"] ? "error" : undefined)}
       {...labelBoxProps}
       variant={variant}
     >
       <InputNumber
         style={{ ...style, width: "100%", border: "none" }}
+        decimalSeparator=","
+        formatter={value => {
+          if (value === undefined || value === null) return ""
+          const [int, dec] = value.toString().split(".")
+          return int.replace(/\B(?=(\d{3})+(?!\d))/g, ",") + (dec !== undefined ? `.${dec}` : "")
+        }}
+        parser={value => {
+          if (!value) return ""
+          return value.replace(/,/g, "")
+        }}
+        onCopy={e => {
+          e.preventDefault()
+          const rawValue = e.currentTarget.value.replace(/[.,]/g, "")
+          e.clipboardData.setData("text/plain", rawValue)
+        }}
         {...restProps}
         variant="borderless"
         onFocus={handleFocus}
@@ -68,5 +78,5 @@ export function FloatInputNumber({
         rootClassName="ant-float-label-form-input-number"
       />
     </FloatingLabelBox>
-  );
+  )
 }

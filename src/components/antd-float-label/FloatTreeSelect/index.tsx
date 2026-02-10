@@ -1,11 +1,11 @@
-import { TreeSelect, TreeSelectProps } from "antd";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { FloatingLabelBox, FloatingLabelBoxProps } from "../FloatingLabelBox";
-import { useValueHandle } from "../../../hooks/use-value-handle";
+import { useValueHandle } from "@/hooks/use-value-handle"
+import { TreeSelect, type TreeSelectProps } from "antd"
+import { useCallback } from "react"
+import { FloatingLabelBox, type FloatingLabelBoxProps } from "../FloatingLabelBox"
 
 export interface FloatTreeSelectProps extends TreeSelectProps {
-  required?: boolean;
-  labelBoxProps?: FloatingLabelBoxProps;
+  required?: boolean
+  labelBoxProps?: FloatingLabelBoxProps
 }
 
 export function FloatTreeSelect({
@@ -22,24 +22,23 @@ export function FloatTreeSelect({
   labelBoxProps,
   ...restProps
 }: FloatTreeSelectProps) {
-  const { hasValue, handleChange, handleBlur, handleFocus, isFocus } =
-    useValueHandle({
-      id: restProps.id?.toString(),
-      defaultValue,
-      value,
-      onFocus,
-      onBlur,
-    });
+  const { hasValue, handleChange, handleBlur, handleFocus, isFocus } = useValueHandle({
+    id: restProps.id?.toString(),
+    defaultValue,
+    value,
+    onFocus,
+    onBlur,
+  })
 
   const changeHandler = useCallback(
     (value: any, labelList: React.ReactNode[], extra: any) => {
-      handleChange(value);
+      handleChange(value)
       if (onChange) {
-        onChange(value, labelList, extra);
+        onChange(value, labelList, extra)
       }
     },
     [onChange]
-  );
+  )
 
   return (
     <FloatingLabelBox
@@ -49,9 +48,7 @@ export function FloatTreeSelect({
       width={style?.width}
       height={style?.height}
       required={required}
-      status={
-        restProps.status || (restProps["aria-invalid"] ? "error" : undefined)
-      }
+      status={restProps.status || (restProps["aria-invalid"] ? "error" : undefined)}
       variant={variant}
       {...labelBoxProps}
     >
@@ -72,5 +69,5 @@ export function FloatTreeSelect({
         rootClassName="ant-float-label-form-select"
       />
     </FloatingLabelBox>
-  );
+  )
 }
