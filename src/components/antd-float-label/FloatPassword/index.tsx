@@ -1,0 +1,77 @@
+import { Input } from "antd";
+import {
+  useCallback,
+} from "react";
+import { FloatingLabelBox, FloatingLabelBoxProps } from "../FloatingLabelBox";
+import { PasswordProps } from "antd/es/input";
+import { useValueHandle } from "../../../hooks/use-value-handle";
+
+const { Password } = Input;
+
+export interface FloatPasswordProps extends PasswordProps {
+  required?: boolean
+  labelBoxProps?: FloatingLabelBoxProps;
+}
+
+export function FloatPassword({
+  placeholder,
+  onFocus,
+  onBlur,
+  value,
+  defaultValue,
+  style,
+  onChange,
+  required,
+  labelBoxProps,
+  variant,
+  ...restProps
+}: FloatPasswordProps) {
+  const { hasValue, handleChange, handleBlur, handleFocus, isFocus } =
+    useValueHandle({
+      id: restProps.id,
+      defaultValue,
+      value,
+      onFocus,
+      onBlur,
+    });
+
+  const changeHanlder = useCallback<
+    Exclude<PasswordProps["onChange"], undefined>
+  >(
+    (value) => {
+      handleChange(value);
+      if (onChange) {
+        onChange(value);
+      }
+    },
+    [onChange]
+  );
+
+  return (
+    <FloatingLabelBox
+      label={placeholder}
+      focused={isFocus}
+      hasValue={hasValue}
+      width={style?.width}
+      height={style?.height}
+      required={required}
+      status={
+        restProps.status || (restProps["aria-invalid"] ? "error" : undefined)
+      }
+      variant={variant}
+      {...labelBoxProps}
+    >
+      <Password
+        style={{ ...style, width: "100%", border: "none" }}
+        {...restProps}
+        variant="borderless"
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        value={value}
+        defaultValue={defaultValue}
+        onChange={changeHanlder}
+        rootClassName="ant-float-label-form-input-password"
+      />
+    </FloatingLabelBox>
+  );
+}

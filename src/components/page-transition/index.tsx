@@ -1,0 +1,35 @@
+import { motion } from "framer-motion"
+import React from "react"
+
+interface PageTransitionProps {
+  children: React.ReactNode
+}
+const pageVariants = {
+  initial: {
+    opacity: 0,
+    y: -20,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+  },
+  exit: {
+    opacity: 0,
+    y: 20,
+  },
+}
+export function PageTransition({ children }: PageTransitionProps) {
+  return (
+    <motion.div
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={{ duration: 0.1, ease: "linear" }}
+    >
+      {children}
+    </motion.div>
+  )
+}
+
+export default PageTransition

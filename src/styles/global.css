@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@import"antd/dist/reset.css";
+@import './form.css';
+
+body {
+  background-color: #fafafa;
+}

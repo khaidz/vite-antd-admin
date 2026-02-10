@@ -1,0 +1,159 @@
+.ant-form-item-explain-error {
+  font-size: 12px;
+}
+
+.ant-float-v2 .ant-select-disabled,
+.ant-float-v2 .ant-input-disabled,
+.ant-float-v2 .ant-picker-disabled,
+.ant-float-v2 .ant-picker-disabled input[disabled] {
+  cursor: not-allowed;
+  color: #000;
+  background-color: #f2f2f2;
+}
+
+.ant-float-v2 .ant-input-number-input:disabled {
+  color: #000;
+  cursor: not-allowed;
+}
+
+/* FloatAutoComplete */
+.ant-float-v2 .ant-select {
+  height: 30px;
+  margin-top: 18px;
+}
+
+.ant-float-label-form-auto-complete .ant-select-selector {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* FloatCascader */
+.ant-float-v2 .ant-select .ant-select-suffix {
+  align-self: baseline;
+}
+
+.ant-float-v2 .ant-select .ant-select-clear {
+  margin-top: unset;
+  transform: unset;
+  top: 0;
+}
+
+/* FloatDatePicker */
+.ant-float-v2 .ant-picker-input {
+  height: 30px;
+  margin-top: 18px;
+}
+
+.ant-float-v2 .ant-picker {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.ant-float-v2 .ant-picker .ant-picker-suffix {
+  align-self: baseline;
+}
+
+.ant-float-v2 .ant-picker .ant-picker-clear {
+  transform: unset;
+  top: 0;
+}
+
+.ant-float-v2 .ant-float-label-form-picker {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* FloatInput */
+.ant-float-v2 .ant-input {
+  height: 30px;
+  margin-top: 18px;
+}
+
+/* FloatInputNumber */
+.ant-float-v2 .ant-float-label-form-input-number {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.ant-float-v2 .ant-input-number {
+  height: 30px;
+  margin-top: 18px;
+}
+
+.ant-float-v2 .ant-input-number-actions {
+  display: none;
+}
+
+/* FloatPassword */
+.ant-float-v2 .ant-float-label-form-input-password {
+  position: static !important;
+}
+
+.ant-float-v2 .ant-input-affix-wrapper {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* FloatRangePicker */
+.ant-float-v2 .ant-float-label-form-picker {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.ant-float-v2 .ant-picker-range,
+.ant-float-v2 .ant-picker-range .ant-picker-input {
+  height: 100%;
+  margin-top: 0;
+}
+
+.ant-float-v2 .ant-picker-range .ant-picker-range-separator {
+  padding-top: 0px;
+}
+
+.ant-float-v2 .ant-picker-range .ant-picker-input:has(input:not(:placeholder-shown)) {
+  height: 30px;
+  margin-top: 18px;
+}
+
+.ant-float-v2 .ant-picker-range .ant-picker-input:has(input:not(:placeholder-shown))+.ant-picker-range-separator {
+  padding-top: 10px;
+}
+
+.ant-float-v2 .ant-picker-range.ant-picker-focused .ant-picker-input {
+  height: 30px;
+  margin-top: 18px;
+}
+
+.ant-float-v2 .ant-picker-range.ant-picker-focused .ant-picker-range-separator {
+  padding-top: 10px;
+}
+
+.ant-float-v2 .ant-picker-range .ant-picker-suffix {
+  align-self: center;
+}
+
+.ant-float-v2 .ant-picker-range .ant-picker-clear {
+  top: 40%;
+}
+
+.ant-float-v2 .ant-picker-range .ant-picker-active-bar {
+  background: transparent;
+}
+
+.ant-float-v2 .ant-picker-range .ant-picker-input input::placeholder {
+  color: #000;
+}
+
+.ant-float-v2 .ant-picker-range .ant-picker-input input:focus::placeholder {
+  color: #d9d9d9;
+}
+
+/* FloatSelect */
+.ant-float-v2 .ant-float-label-form-select .ant-select-selector {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.ant-float-v2 .ant-float-label-form-select {
+  height: auto !important;
+}
