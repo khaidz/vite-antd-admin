@@ -74,7 +74,7 @@ export function FloatInputMoney({
           onChange={changeHanlder}
           rootClassName="ant-float-label-form-input-number"
         />
-        <Space.Addon style={{ margin: 1 }}>VNĐ</Space.Addon>
+        <Space.Addon style={{ margin: 1, border: "none" }}>VNĐ</Space.Addon>
       </Space.Compact>
     </FloatingLabelBox>
   )

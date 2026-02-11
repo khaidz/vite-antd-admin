@@ -8,10 +8,25 @@ function AntdTheme({ children }: { children: React.ReactNode }) {
       locale={enUS}
       theme={{
         token: {
-          colorPrimary: "#0066b3",
           borderRadius: 6,
           colorLink: "#0066b3",
           colorLinkHover: "#005c99",
+
+          colorPrimary: "#0066b3",
+          colorPrimaryBg: "#0066b3",
+          colorPrimaryBgHover: "#1f7fbf",
+          colorPrimaryBorder: "#005c99",
+          colorPrimaryText: "#fff",
+          colorPrimaryHover: "#1f7fbf",
+          colorPrimaryActive: "#005c99",
+
+          colorWarning: "#fdb913",
+          colorWarningBg: "#fdb913",
+          colorWarningBgHover: "#fdc22b",
+          colorWarningBorder: "#f7b510",
+          colorWarningText: "#000",
+          colorWarningHover: "#fdc22b",
+          colorWarningActive: "#f7b510",
         },
         components: {
           Layout: {
@@ -20,7 +35,7 @@ function AntdTheme({ children }: { children: React.ReactNode }) {
             headerPadding: 0,
           },
           Form: {
-            itemMarginBottom: 20,
+            itemMarginBottom: 0,
           },
           Table: {
             headerBg: "#0066b3",
@@ -30,6 +45,7 @@ function AntdTheme({ children }: { children: React.ReactNode }) {
             headerColor: "#fff",
             headerBorderRadius: 4,
             bodySortBg: "#fff",
+            cellPaddingBlockSM: 4,
           },
         },
       }}

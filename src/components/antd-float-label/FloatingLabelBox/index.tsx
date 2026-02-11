@@ -105,8 +105,9 @@ export function FloatingLabelBox({
         style={{
           position: "absolute",
           color: focused ? statusColor.textColorActive : statusColor.textColor,
-          height: "100%",
-          transform: focused || hasValue ? "scale(0.8) translate(0, -7px)" : "scale(1) translate(0, 0)",
+          height: "20px",
+          top: "14px",
+          transform: focused || hasValue ? "scale(0.8) translate(0, -11px)" : "scale(1) translate(0, 0)",
           // transformOrigin: "top left",
           paddingLeft: focused || hasValue ? 13 : 11,
           paddingRight: focused || hasValue ? 13 : 11,

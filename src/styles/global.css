@@ -5,3 +5,7 @@
 body {
   background-color: #fafafa;
 }
+
+.ant-picker-time-panel-cell-inner{
+  color: #fff;
+}

@@ -6,15 +6,15 @@ import { Link } from "react-router"
 function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
     <Layout className="dashboard-layout">
-      <Header className="shadow-md">
+      <Header className="shadow-md fixed top-0 left-0 right-0 z-50">
         <div className="container mx-auto flex justify-between items-center px-3 md:px-8">
           <Link to="/" className="no-underline">
             <div className="left flex items-center gap-2 font-medium text-[16px] text-black">
               <div className="logo-symbol">
                 <HomeOutlined />
               </div>
-              <div className="logo-text hidden md:block">Hệ thống </div>
-              <div className="logo-text block md:hidden">123123</div>
+              <div className="logo-text hidden md:block">Hệ thống hỗ trợ dev</div>
+              <div className="logo-text block md:hidden">Dev tools</div>
             </div>
           </Link>
 
@@ -37,7 +37,7 @@ function DashboardLayout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </Header>
-      <Content className="container mx-auto my-4 px-3">
+      <Content className="container mx-auto my-4 px-3 mt-[60px]">
         <Link to="/">Dashboard</Link>
         <Link to="/service" className="ml-4">
           Service

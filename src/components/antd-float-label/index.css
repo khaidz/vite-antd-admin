@@ -65,7 +65,7 @@
 
 /* FloatInput */
 .ant-float-v2 .ant-input {
-  height: 30px;
+  height: auto;
   margin-top: 18px;
 }
 
@@ -76,7 +76,7 @@
 }
 
 .ant-float-v2 .ant-input-number {
-  height: 30px;
+  height: auto;
   margin-top: 18px;
 }
 
@@ -111,7 +111,7 @@
 }
 
 .ant-float-v2 .ant-picker-range .ant-picker-input:has(input:not(:placeholder-shown)) {
-  height: 30px;
+  height: auto;
   margin-top: 18px;
 }
 
@@ -120,7 +120,7 @@
 }
 
 .ant-float-v2 .ant-picker-range.ant-picker-focused .ant-picker-input {
-  height: 30px;
+  height: auto;
   margin-top: 18px;
 }
 
