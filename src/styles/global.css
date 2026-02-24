@@ -9,3 +9,9 @@ body {
 .ant-picker-time-panel-cell-inner{
   color: #fff;
 }
+
+@media screen and (min-width: 64rem){
+  .container{
+    max-width: 64rem;;
+  }
+}

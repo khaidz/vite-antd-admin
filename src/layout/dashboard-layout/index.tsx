@@ -37,11 +37,7 @@ function DashboardLayout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </Header>
-      <Content className="container mx-auto my-4 px-3 mt-[60px]">
-        <Link to="/">Dashboard</Link>
-        <Link to="/service" className="ml-4">
-          Service
-        </Link>
+      <Content className="container mx-auto my-4 px-3 mt-[70px]">
         <div className="content-area bg-white p-6 rounded-md shadow-sm min-h-[calc(100vh-100px)]">{children}</div>
       </Content>
     </Layout>

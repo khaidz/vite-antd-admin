@@ -59,57 +59,57 @@ function Dashboard() {
             </FloatItemList>
           </Row>
           <Row gutter={16}>
-            <Col span={8} className="mb-3">
+            <Col span={8}>
               <FloatFormItem name={"field1"} rules={[{ required: true }]} label="FloatAutoComplete ">
                 <FloatAutoComplete value={"123123"} />
               </FloatFormItem>
             </Col>
-            <Col span={8} className="mb-3">
+            <Col span={8}>
               <FloatFormItem name={"field2"} rules={[{ required: true }]} label="FloatCascader ">
-                <FloatCascader value={"123123"} size="large" />
+                <FloatCascader value={"123123"} />
               </FloatFormItem>
             </Col>
-            <Col span={8} className="mb-3">
+            <Col span={8}>
               <Form.Item name={"field3"} rules={[{ required: true }]}>
                 <FloatDatePicker placeholder="FloatDatePicker Ngày hết hạn" style={{ width: "100%" }} />
               </Form.Item>
             </Col>
-            <Col span={8} className="mb-3">
+            <Col span={8}>
               <Form.Item name={"field4"} rules={[{ required: true }]}>
                 <FloatInput placeholder="FloatInput " required />
               </Form.Item>
             </Col>
-            <Col span={8} className="mb-3">
+            <Col span={8}>
               <Form.Item name={"field5"} rules={[{ required: true }]}>
                 <FloatInputNumber placeholder="FloatInputNumber " required />
               </Form.Item>
             </Col>
-            <Col span={8} className="mb-3">
+            <Col span={8}>
               <Form.Item name={"field50"} rules={[{ required: true }]}>
                 <FloatInputMoney placeholder="FloatInputMoney " required />
               </Form.Item>
             </Col>
-            <Col span={8} className="mb-3">
+            <Col span={8}>
               <Form.Item name={"field6"} rules={[{ required: true }]}>
                 <FloatPassword placeholder="FloatPassword " required />
               </Form.Item>
             </Col>
-            <Col span={8} className="mb-3">
+            <Col span={8}>
               <Form.Item name={"field7"} rules={[{ required: true }]}>
                 <FloatRangePicker placeholder={["StartDate", "EndDate"]} />
               </Form.Item>
             </Col>
-            <Col span={8} className="mb-3">
+            <Col span={8}>
               <Form.Item name={"field8"} rules={[{ required: true }]}>
                 <FloatTimePicker placeholder="TimePicker" required />
               </Form.Item>
             </Col>
-            <Col span={8} className="mb-3">
+            <Col span={8}>
               <Form.Item name={"field10"} rules={[{ required: true }]}>
                 <FloatTreeSelect placeholder="FloatTreeSelect" required />
               </Form.Item>
             </Col>
-            <Col span={8} className="mb-3">
+            <Col span={8}>
               <Form.Item name={"field9"} rules={[{ required: true }]}>
                 <FloatTreeSelect
                   placeholder="Chọn nhân viên"
@@ -129,9 +129,10 @@ function Dashboard() {
                 />
               </Form.Item>
             </Col>
-            <Col span={8} className="mb-3">
+            <Col span={8}>
               <BasicButton
                 buttonType="primary"
+                size="large"
                 onClick={async e => {
                   e.preventDefault()
                   // const values = await form.validateFields()

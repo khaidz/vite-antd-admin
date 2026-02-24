@@ -1,10 +1,8 @@
 import { BasicButton } from "@/components/basic-button"
-import BasicTitle from "@/components/basic-title"
 
 function Service(props) {
   return (
     <section>
-      <BasicTitle>Chi tiết yêu cầu dịch vụ</BasicTitle>
       <div className="flex gap-3">
         <BasicButton buttonType="default" size="large">
           default

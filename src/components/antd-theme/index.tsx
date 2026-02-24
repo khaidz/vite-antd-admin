@@ -35,7 +35,7 @@ function AntdTheme({ children }: { children: React.ReactNode }) {
             headerPadding: 0,
           },
           Form: {
-            itemMarginBottom: 0,
+            itemMarginBottom: 16,
           },
           Table: {
             headerBg: "#0066b3",

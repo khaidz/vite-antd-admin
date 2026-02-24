@@ -87,6 +87,7 @@
 /* FloatPassword */
 .ant-float-v2 .ant-float-label-form-input-password {
   position: static !important;
+  height: 48px;
 }
 
 .ant-float-v2 .ant-input-affix-wrapper {

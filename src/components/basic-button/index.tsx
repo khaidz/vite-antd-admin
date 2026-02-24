@@ -9,7 +9,7 @@ interface BasicButtonProps extends ButtonProps {
 
 type ButtonType = "default" | "primary" | "secondary" | "warning"
 
-export function BasicButton({ buttonType = "default", children, className, ...props }: BasicButtonProps) {
+export function BasicButton({ buttonType = "default", children, className, size, ...props }: BasicButtonProps) {
   console.log("buttonType", buttonType)
   const typeMap: Record<ButtonType, ButtonProps["type"]> = {
     default: "default",
@@ -23,8 +23,10 @@ export function BasicButton({ buttonType = "default", children, className, ...pr
       type={typeMap[buttonType]}
       className={clsx(
         { "btn-secondary": buttonType === "secondary", "btn-warning": buttonType === "warning" },
+        { "!h-[44px] !text-sm": size === "large" },
         className
       )}
+      size={size}
       {...props}
     >
       {children}
